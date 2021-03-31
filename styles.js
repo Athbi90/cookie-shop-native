@@ -7,7 +7,18 @@ export const HomeWrapper = styled.View`
 `;
 
 export const HomeTitle = styled.Text`
-  color: red;
+  color: ${(props) => props.theme.mainColor};
+  background-color: ${(props) => props.theme.backgroundColor};
   font-size: 45;
   text-align: center;
+`;
+export const GoToButton = styled.Text`
+  font-size: 30;
+  color: #24107f;
+  background-color: #ffb7ff;
+`;
+
+export const ButtonStyled = styled.Text`
+  font-size: 20;
+  color: #5296a5;
 `;

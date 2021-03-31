@@ -1,4 +1,3 @@
-import axios from "axios";
 import { makeAutoObservable } from "mobx";
 import instance from "./instance";
 
