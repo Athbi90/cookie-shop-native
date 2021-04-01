@@ -9,13 +9,8 @@ const Home = ({ navigation }) => {
       <ButtonStyled onPress={() => alert("Buzz Lightyear")}>
         Who is sending this message?
       </ButtonStyled>
-      <GoToButton onPress={() => navigation.navigate("OtherHome")}>
-        Go to Other Home
-      </GoToButton>
 
-      <ButtonStyled onPress={() => navigation.navigate("List")}>
-        List Page
-      </ButtonStyled>
+      <GoToButton onPress={() => navigation.push("List")}>List Page</GoToButton>
     </HomeWrapper>
   );
 };

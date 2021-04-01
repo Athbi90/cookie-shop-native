@@ -4,6 +4,8 @@ export const HomeWrapper = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
+  color: ${(props) => props.theme.mainColor};
+  background-color: ${(props) => props.theme.backgroundColor};
 `;
 
 export const HomeTitle = styled.Text`
@@ -12,13 +14,19 @@ export const HomeTitle = styled.Text`
   font-size: 45;
   text-align: center;
 `;
+
+export const CookieImage = styled.Image`
+  width: 140;
+  height: 140;
+`;
+
 export const GoToButton = styled.Text`
   font-size: 30;
-  color: #24107f;
-  background-color: #ffb7ff;
+  color: ${(props) => props.theme.mainColor};
+  background-color: ${(props) => props.theme.backgroundColor};
 `;
 
 export const ButtonStyled = styled.Text`
   font-size: 20;
-  color: #5296a5;
+  color: ${(props) => props.theme.mainColor};
 `;

@@ -30,8 +30,17 @@ export default function App() {
       <ThemeProvider theme={theme.dark}>
         <NavigationContainer>
           <Navigator initialRouteName="Home">
-            <Screen name="OtherHome" component={CookieItem} />
-            <Screen name="Home" component={Home} />
+            <Screen name="Cookie Details" component={CookieItem} />
+            <Screen
+              name="Home"
+              component={Home}
+              options={{
+                headerStyle: {
+                  color: "#fefafb",
+                  backgroundColor: "#ff85a2",
+                },
+              }}
+            />
             <Screen name="List" component={CookieList} />
           </Navigator>
         </NavigationContainer>

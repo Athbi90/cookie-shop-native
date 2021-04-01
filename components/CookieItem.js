@@ -1,20 +1,22 @@
 import React from "react";
-import { Text, View } from "react-native";
-import { ButtonStyled, HomeWrapper } from "../styles";
+import { Text } from "react-native";
+import { ButtonStyled, HomeWrapper, HomeTitle, CookieImage } from "../styles";
 import cookieStore from "../stores/CookieStore";
 import { observer } from "mobx-react";
 
-const CookieItem = ({ navigation }) => {
+const CookieItem = ({ navigation, route }) => {
   if (cookieStore.loading) {
-    return <Text>Loading</Text>;
+    return <HomeTitle>Loading</HomeTitle>;
   }
-  const productItem = cookieStore.products.map((prod) => (
-    <Text>{prod.name}</Text>
-  ));
+  const { id } = route.params;
+  const productItem = cookieStore.products.find((prod) => prod.id === +id);
   console.log(productItem);
+
   return (
     <HomeWrapper>
-      {productItem}
+      <CookieImage source={{ uri: productItem.image }} />
+      <HomeTitle>{productItem.name}</HomeTitle>
+      <Text>Price: {productItem.price} KWD</Text>
       <ButtonStyled onPress={() => navigation.navigate("Home")}>
         To the Home Page
       </ButtonStyled>
